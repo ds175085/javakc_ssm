@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.test.dao.TestDao">
+
+<select id="findList" resultType="com.zhg.javakc.modules.test.entity.TestEntity">
+	SELECT test_id as testId ,test_name as testName,test_sex as
+	testSex,test_date as testDate from data_test where 1=1
+</select>
+
+	<insert id="insert">
+		insert into data_test(test_id,test_name,test_sex,test_date)
+		values (#{testId},#{testName},#{testSex},#{testDate})
+	</insert>
+
+	<select id="view">
+		SELECT test_id as testId ,test_name as testName,test_sex as
+	testSex,test_date as testDate from data_test where test_id=#{0}
+	</select>
+
+	<update id="update">
+    update date_test set
+    test_name=#{testName},test_sex=#{testSex},test_date=#{testDate}
+
+	</update>
+</mapper>
